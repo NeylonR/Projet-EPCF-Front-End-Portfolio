@@ -1,31 +1,61 @@
-nav.navbarOfBurger{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 12;
-    @include flex(flex-start, column, flex-start, no-wrap);
-    background-color: black;
-    width: 0%;
-    height: 0vh;
-    overflow: hidden;
-    padding: 0;
-    @include transi;
+.logo{
+    width: 50px;
+}
 
-    &.active{
-        width: 75%;
-        height: 100%;
-        padding: 2em 0 0 2em;
-        @include transi;
+header{
+    background-image: url(../images/backgroundCut.png);
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 60vh;
+    padding: 1em;
+    @include flex(space-between, row, flex-start);
+
+    .imgContainer{
+        width: 100%;
+        padding: .3em;
+        overflow: hidden;
+        @include flex;
+    
+        img{
+            border: 5px black solid;
+            border-radius: 50%;
+            object-fit: cover;
+            width: 30vw;
+        }
     }
+}
 
+
+
+nav{
     #navbar{
-        @include flex(flex-start, column, flex-start);
-        gap: 1em;
-        padding-bottom: 1em;
-    }
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 12;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 0%;
+        height: 0vh;
+        overflow: hidden;
+        @include transi;
+        @include flex(flex-start, column, flex-end);
+        gap: 2em;
+        padding: 6em 2em 0 0;
+        visibility: hidden;
+        opacity: 0;
+        
+        &.active{
+            width: 75%;
+            height: 100%;
+            visibility: visible;
+            opacity: 1;
+        }
 
-    .triangle{
-        display: none;
+        li{
+            color: white;
+            font-size: 22px;
+        }
     }
 }
 

@@ -1,6 +1,379 @@
 * {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-decoration: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
 }
+
+@font-face {
+  font-family: Archivo;
+  src: url(../fonts/Archivo/Archivo-Bold.ttf);
+}
+@font-face {
+  font-family: Lato;
+  src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Lato;
+  font-size: clamp(1.125rem, 1vw + 1rem, 1.625rem);
+}
+
+h1, h2, h3, h4 {
+  font-family: Archivo;
+  font-size: clamp(1.375rem, 1vw + 1rem, 1.875rem);
+}
+
+a {
+  color: black;
+}
+
+.bounce {
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-30%);
+  }
+  50% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+.bgAnime {
+  background-size: 200% 400%;
+  animation: move 3s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeFromBottom {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.toAnimate.active {
+  animation: 1s fadeFromBottom ease 1;
+}
+
+.logo {
+  width: 50px;
+}
+
+header {
+  background-image: url(../images/backgroundCut.png);
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 60vh;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+header .imgContainer {
+  width: 100%;
+  padding: 0.3em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+header .imgContainer img {
+  border: 5px black solid;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 30vw;
+}
+
+nav #navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 0%;
+  height: 0vh;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 6em 2em 0 0;
+  visibility: hidden;
+  opacity: 0;
+}
+nav #navbar.active {
+  width: 75%;
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+nav #navbar li {
+  color: white;
+  font-size: 22px;
+}
+
+#burgerButton {
+  position: relative;
+  cursor: pointer;
+  height: 2.5em;
+  transition: all 0.3s ease-in-out;
+}
+
+#burger::after, #burger::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+}
+
+#burger {
+  position: relative;
+  display: inline-block;
+  top: 20%;
+  transition: all 0.5s ease-in-out;
+}
+#burger.active {
+  background: rgba(167, 1, 9, 0.8);
+  height: 2.5em;
+  top: 0;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px white;
+  transform: translateX(-4vw);
+  z-index: 13;
+}
+#burger.active::after, #burger.active::before {
+  top: 1.05em;
+  left: 0.25em;
+  background-color: white;
+  box-shadow: 0px 0px 2px white;
+  width: 2em;
+}
+#burger.active::after {
+  transform: rotate(-45deg);
+}
+#burger.active::before {
+  transform: rotate(45deg);
+}
+
+#burger, #burger::after, #burger::before {
+  width: 2.5em;
+  height: 0.3em;
+  background-color: white;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+#burger::after {
+  top: -10px;
+  left: 0;
+}
+
+#burger::before {
+  top: 10px;
+  left: 0;
+}
+
+img {
+  width: 60%;
+}
+
+#sectionAbout {
+  background: linear-gradient(180deg, #620677 0%, #6D214F 100%);
+  background-size: 200% 200%;
+  text-align: center;
+  padding: 1em 0 8em;
+}
+#sectionAbout h1 {
+  padding: 0 0.5em 1em;
+  font-size: 24px;
+  animation: 1s fadeIn ease-in-out 1;
+}
+#sectionAbout h2, #sectionAbout p {
+  padding: 0 1em 0.5em;
+  animation: 1s fadeIn ease-in-out 1;
+}
+
+#sectionSkills {
+  margin-top: -7em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 4em;
+}
+#sectionSkills article {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #E6E6E9;
+  width: 80%;
+  border-radius: 25px;
+  box-shadow: 2px 2px 2px black;
+  padding: 2em 1em;
+}
+#sectionSkills article img {
+  width: 35%;
+  align-self: center;
+}
+#sectionSkills article h2 {
+  align-self: center;
+}
+#sectionSkills article h2, #sectionSkills article p, #sectionSkills article img {
+  padding-bottom: 1em;
+}
+#sectionSkills article i {
+  font-size: 40px;
+  padding-right: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+#sectionGalerie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2em 0;
+  gap: 1em;
+}
+#sectionGalerie p {
+  text-align: center;
+}
+#sectionGalerie .imgContainer {
+  width: 90%;
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 25px;
+  margin-bottom: 3em;
+  box-shadow: 2px 2px 2px black;
+}
+#sectionGalerie .imgContainer img {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  transform-origin: top center;
+}
+#sectionGalerie .imgContainer img:hover {
+  transform: scale(1.2);
+}
+
+#sectionTestimony {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+#sectionTestimony article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+#sectionTestimony article .imgContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#sectionTestimony article .imgContainer img {
+  width: 40%;
+  border: 1px black solid;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#sectionTestimony article .imgContainer .a1, #sectionTestimony article .imgContainer .a2 {
+  background-color: black;
+  width: 20px;
+  height: 80px;
+}
+#sectionTestimony article p {
+  padding-bottom: 1em;
+}
+
+@media screen and (min-width: 900px) {
+  header {
+    padding: 1em 0 0 0;
+  }
+
+  #burgerButton {
+    display: none;
+  }
+
+  nav {
+    width: 100%;
+    background-color: #daddd83f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.5em 3em 0.5em 1.5em;
+    font-size: 24px;
+  }
+  nav #navbar {
+    display: block;
+    position: static;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    padding: 0;
+    visibility: visible;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

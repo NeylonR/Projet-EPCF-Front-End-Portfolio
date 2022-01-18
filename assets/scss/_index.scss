@@ -1,0 +1,119 @@
+img{
+    width: 60%;
+}
+
+#sectionAbout{
+
+    background: linear-gradient(180deg, #620677 0%, #6D214F 100%);
+    background-size: 200% 200%;
+    // @include flex(center, column);
+    text-align: center;
+    padding: 1em 0 8em;
+
+    h1{
+        padding: 0 .5em 1em;
+        font-size: 24px;
+        animation: 1s fadeIn ease-in-out 1;
+    }
+
+    h2, p{
+        padding: 0 1em .5em;
+        animation: 1s fadeIn ease-in-out 1;
+    }
+}
+
+#sectionSkills{
+    margin-top: -7em;
+    @include flex(flex-start, column);
+    gap: 4em;
+
+    article{
+        @include flex(flex-start, column, flex-start);
+        background-color: #E6E6E9;
+        width: 80%;
+        border-radius: 25px;
+        box-shadow: 2px 2px 2px black;
+        padding: 2em 1em;
+
+        img{
+            width: 35%;
+            align-self: center;
+        }
+
+        h2{
+            align-self: center;
+        }
+
+        h2, p, img{
+            padding-bottom: 1em;
+        }
+
+        i{
+            font-size: 40px;
+            padding-right: .3em;
+            padding-bottom: .3em;
+        }
+    }
+}
+
+#sectionGalerie{
+    @include flex(center, column);
+    padding: 2em 0;
+    gap: 1em;
+
+    p{
+        text-align: center;
+    }
+
+    .imgContainer{
+        width: 90%;
+        height: 40vh;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-bottom: 3em;
+        box-shadow: 2px 2px 2px black;
+        img{
+            width: 100%;
+            @include transi;
+            transform-origin: top center;
+
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+
+#sectionTestimony{
+    @include flex(center, column);
+    text-align: center;
+
+    article{
+        @include flex(center, column);
+        gap: 1em;
+
+        .imgContainer{
+            @include flex(space-between);
+            width: 100%;
+
+            img{
+                width: 40%;
+                border: 1px black solid;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            .a1, .a2{
+                background-color: black;
+                width: 20px;
+                height: 80px;
+            }
+        }
+
+
+        p{
+            padding-bottom: 1em;
+        }
+    }
+}

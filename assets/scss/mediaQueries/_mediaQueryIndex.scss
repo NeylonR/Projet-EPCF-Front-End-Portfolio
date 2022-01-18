@@ -1,0 +1,28 @@
+@media screen and(min-width: 900px){
+    header{
+        padding: 1em 0 0 0;
+    }
+    #burgerButton{
+        display: none;
+    }
+
+    nav{
+        width: 100%;
+        background-color: #daddd83f;
+        @include flex(space-between);
+        padding: 0.5em 3em .5em 1.5em;
+        font-size: 24px;
+        #navbar{
+            display: block;
+            position: static;
+            background-color: transparent;
+            width: auto;
+            height: auto;
+            opacity: 1;
+            padding:0;
+            visibility: visible;
+            @include flex(flex-end);
+            gap: 1em;
+        }
+    }
+}
