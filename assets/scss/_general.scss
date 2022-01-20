@@ -21,40 +21,94 @@ html, body {
 
 body{
     font-family: Lato;
-    font-size: clamp(1.125rem, 1vw + 1rem, 1.625rem);
+    font-size: clamp(1.125rem, 0.8vw + 1rem, 1.5rem); 
+    //clamp(1.125rem, 1vw + 1rem, 1.625rem);
 }
 
 h1, h2, h3, h4{
     font-family: Archivo;
     font-size: clamp(1.375rem, 1vw + 1rem, 1.875rem);
+    //clamp(1.375rem, 1vw + 1rem, 1.875rem);
+}
+
+h1{
+    position: relative;
+}
+
+h1::after{
+    content: "";
+    transform: translateX(-5%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $thirdColor;
+    height: 50%;
+    width: 110%;
+    border-radius: 15px;
 }
 
 a{
     color: black;
 }
 
+strong{
+    font-weight: normal;
+}
+
+// style hover gradiant pour l'img linkedin sur contact/footer
+.linkedin{
+    a{
+    background: linear-gradient(to right, $primaryColor, $thirdColor 50%, $fourthColor 50%, #76A9EA 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 100%;
+    background-position: 100%;
+    @include transi(.4s);
+
+        &:hover{
+            background-position: 0 100%;
+        }
+    }
+}
+// style hover gradiant pour l'img github sur contact/footer
+.github{
+    a{
+        background: linear-gradient(to right, $primaryColor, $thirdColor 50%,$fourthColor 50%, black 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 200% 100%;
+        background-position: 100%;
+        @include transi(.4s);
+
+            &:hover{
+                background-position: 0 100%;
+            }
+    }
+}
 // animation bounce pour le bouton retour en haut de la page
 .bounce {
     animation: bounce 2s infinite ease-in-out;
 }
 
 @keyframes bounce {
-    0%   { transform: scale(1,1)    translateY(0); }
-    10%  { transform: scale(1.1,.9) translateY(0); }
-    30%  { transform: scale(.9,1.1) translateY(-30%); }
-    50%  { transform: scale(1,1)    translateY(0); }
-    100% { transform: scale(1,1)    translateY(0); }
+    0%   { transform: scale(1,1)    translateY(-100%); }
+    10%  { transform: scale(1.1,.9) translateY(-100%); }
+    30%  { transform: scale(.9,1.1) translateY(-130%); }
+    50%  { transform: scale(1,1)    translateY(-100%); }
+    100% { transform: scale(1,1)    translateY(-100%); }
 }
 
-.bgAnime{
-    background-size: 200% 400%;
-    animation: move 3s linear infinite;
-}
+// .bgAnime{
+//     background-size: 200% 400%;
+//     animation: move 3s linear infinite alternate;
+// }
 
 @keyframes move {
     0%{background-position:0% 0%}
-    50%{background-position:0% 100%}
-    100%{background-position:0% 0%}
+    100%{background-position:0% 100%}
 }
 
 @keyframes fadeIn {
@@ -68,5 +122,14 @@ a{
 }
 
 .toAnimate.active{
-    animation: 1s fadeFromBottom ease 1;
+    animation: 1s fadeFromBottom ease 1 forwards;
+
+    h2{
+        animation : comein 1.5s 1 ease-in-out forwards;
+    }
+}
+
+@keyframes rotate{
+    0%{background: linear-gradient(0deg, #5F5FF3 -2.98%, #B67DFF 68.14%, #FF83CD 104.54%);}
+    100%{background: linear-gradient(360deg, #5F5FF3 -2.98%, #B67DFF 68.14%, #FF83CD 104.54%);}
 }

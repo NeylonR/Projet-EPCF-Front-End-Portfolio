@@ -1,0 +1,61 @@
+@media screen and(min-width: 900px){
+    header{
+        padding: 1em 0 0 0;
+    }
+    #burgerButton{
+        display: none;
+    }
+    .logo{
+        width: 70px;
+        padding: .2em 0em .2em .5em;
+    }
+    nav{
+        width: 100%;
+        background-color: #daddd83f;
+        @include flex(space-between);
+        padding-right: 10%;
+        font-size: 24px;
+        #navbar{
+            display: block;
+            position: static;
+            background-color: transparent;
+            width: auto;
+            height: auto;
+            opacity: 1;
+            padding:0;
+            visibility: visible;
+            @include flex(flex-end);
+            gap: 0em;
+            border-radius: 0;
+
+            &.active{
+                width: auto;
+                height: auto;
+            }
+            
+            li:last-child{
+                padding-right: 1em;
+            }
+            a{
+                height: 100%;
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 1.1em 0.5em;
+                @include transi;
+                border-bottom: 5px transparent solid;
+                box-sizing: border-box;
+                &:hover {
+                    background: #58224667;
+                    border-bottom: 5px #582246 solid;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1500px){
+    header{
+        background-position: center center;
+    }   
+}

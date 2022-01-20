@@ -1,0 +1,34 @@
+@media screen and(min-width:700px){
+    footer {
+        padding: 1em;
+    
+        #backToTopButton{
+            margin-right: 30px;
+        }
+    
+        .logo{
+            width: 90px;
+        }
+    
+        .contactInfo{
+            order: initial;
+            width: auto;
+            padding: 0;
+        }
+    
+        #rgpd{
+            order:initial;
+        }
+       
+    }
+}
+
+@media screen and(min-width:900px){
+    footer {
+        padding: .3em 1em .3em 0;
+        .contactInfo{
+            @include flex;
+            gap: 1em;
+        }    
+    }
+}

@@ -29,7 +29,7 @@ function animationFade(){
         // distance entre le haut de l'element et le haut de la page
         let elementTop = element.getBoundingClientRect().top;
         // la taille de ce que l'on voit de l'element
-        const elementVisible = 20;
+        const elementVisible = 40;
 
         // lorsque l'element entre dans le champ de la hauteur de la page de 20px j'ajoute la classe "active" à l'element pour activer l'animation d'apparition, sinon je la retire
         if(elementTop < windowHeight - elementVisible){

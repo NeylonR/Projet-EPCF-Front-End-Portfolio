@@ -1,0 +1,74 @@
+footer {
+    @include flex(space-between);
+    position: relative;
+    padding: 1em;
+    background: linear-gradient(180deg, #620677 0%, #ED872D 100%, #ffc040 200%);
+    animation: move 8s linear infinite alternate;
+    background-size: 100% 200%;
+
+    p, a{
+        color: $lightColor;
+        @include transi;
+        font-size: clamp(0.063rem, 0.8vw + 0.75rem, 1.5rem);
+    }
+
+    #backToTopButton{
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(-100%);
+        font-size: 50px;
+        animation: bounce 2s ease-in-out infinite;
+        margin-right: 5%;
+        color: black
+    }
+
+    .logo{
+        align-self: flex-start;
+        width: 60px;
+        @include transi;
+
+        &:hover{
+            transform: scale(1.02);
+        }
+    }
+
+    .contactInfo{
+        text-align: center;
+        order: 2;
+        width: 100%;
+        padding: 1em 0 0 0;
+
+        a:hover{
+            text-shadow: 1px 1px 10px black;
+        }
+        i{
+            padding-bottom: 1em
+        }
+    }
+
+    .socials{
+        @include flex;
+        gap: 1em;
+        font-size: 40px;
+        a{
+            font-size: inherit;
+        }
+    }
+
+    #rgpd{
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        order:3;
+        a{
+            font-size: inherit;
+            font-weight: 900;
+            text-shadow: 0 0 2px black;
+            &:hover{
+                text-shadow: 1px 1px 10px black;
+            }
+        }
+    }
+   
+}

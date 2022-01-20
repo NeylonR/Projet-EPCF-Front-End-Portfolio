@@ -1,0 +1,64 @@
+@keyframes comein {
+    0% {
+      letter-spacing: 20px;
+      color: rgba(255, 255, 255, 0);
+    }
+    70% {
+      letter-spacing: 10px;
+    }
+    100% {
+      letter-spacing: normal;
+      color: black;
+    }
+  }
+
+  // Animation des arrow de naviguation 
+#arrowAnim {
+  // width: 10%;
+  // height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+  .arrow, .arrowRight {
+      width: 5vw;
+      height: 5vw;
+      border: 2.5vw solid;
+      border-color: black transparent transparent black;
+      transform: rotate(-45deg);
+      }
+  
+      .arrowRight{
+      transform: rotate(135deg);
+      }
+
+      .arrowSlidingLeft {
+      // position: absolute;
+      animation: slideLeft 3s linear infinite;
+      }
+  
+      .arrowSlidingRight {
+      // position: absolute;
+      animation: slideRight 3s linear infinite;
+      }
+      
+      .delay1 {
+      animation-delay: 1.5s;
+      }    
+
+      @keyframes slideLeft {
+          0% { opacity:0; transform: rotate(-45deg) translate(50%, 50%); }	
+         20% { opacity:1; transform: rotate(-45deg) translate(5vw, 5vw); }	
+         80% { opacity:1; transform: rotate(-45deg) translate(-5vw, -5vw); }	
+        100% { opacity:0; transform: rotate(-45deg) translate(-80%, -80%); }	
+      }
+      
+      
+      @keyframes slideRight {
+          0% { opacity:0; transform: rotate(135deg) translate(10%, 10%); }	
+         60% { opacity:1; transform: rotate(135deg) translate(-100%, -100%); }	
+         70% { opacity:0; transform: rotate(135deg) translate(-110%,-110%); }	
+        100% { opacity:0; transform: rotate(135deg) translate(-10%, -10%); }	
+      }
+  }
