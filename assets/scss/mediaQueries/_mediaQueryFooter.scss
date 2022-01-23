@@ -19,13 +19,12 @@
         #rgpd{
             order:initial;
         }
-       
     }
 }
 
 @media screen and(min-width:900px){
     footer {
-        padding: .3em 1em .3em 0;
+        padding: .5em 1em .3em 1em;
         .contactInfo{
             @include flex;
             gap: 1em;

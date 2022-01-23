@@ -1,20 +1,22 @@
 @media screen and(min-width: 900px){
     header{
         padding: 1em 0 0 0;
+
+        .logo{
+            width: 70px;
+            padding: .2em 0em .2em .5em;
+        }
     }
     #burgerButton{
         display: none;
     }
-    .logo{
-        width: 70px;
-        padding: .2em 0em .2em .5em;
-    }
+    
     nav{
         width: 100%;
         background-color: #daddd83f;
         @include flex(space-between);
         padding-right: 10%;
-        font-size: 24px;
+        
         #navbar{
             display: block;
             position: static;
@@ -45,6 +47,7 @@
                 @include transi;
                 border-bottom: 5px transparent solid;
                 box-sizing: border-box;
+                font-size: 22px;
                 &:hover {
                     background: #58224667;
                     border-bottom: 5px #582246 solid;

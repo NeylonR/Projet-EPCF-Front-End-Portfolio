@@ -21,20 +21,22 @@ html, body {
 
 body{
     font-family: Lato;
-    font-size: clamp(1.125rem, 0.8vw + 1rem, 1.5rem); 
+    font-size:clamp(1.125rem, 0.6vw + 1rem, 1.375rem);
+    // font-size: clamp(1.125rem, 0.8vw + 1rem, 1.5rem); 
     //clamp(1.125rem, 1vw + 1rem, 1.625rem);
 }
 
 h1, h2, h3, h4{
     font-family: Archivo;
-    font-size: clamp(1.375rem, 1vw + 1rem, 1.875rem);
+    font-size: clamp(1.375rem, 0.8vw + 1rem, 1.75rem);
+    // font-size: clamp(1.375rem, 1vw + 1rem, 1.875rem);
     //clamp(1.375rem, 1vw + 1rem, 1.875rem);
 }
 
 h1{
     position: relative;
 }
-
+//le sous titrage orange des titres
 h1::after{
     content: "";
     transform: translateX(-5%);
@@ -92,44 +94,23 @@ strong{
 .bounce {
     animation: bounce 2s infinite ease-in-out;
 }
-
-@keyframes bounce {
-    0%   { transform: scale(1,1)    translateY(-100%); }
-    10%  { transform: scale(1.1,.9) translateY(-100%); }
-    30%  { transform: scale(.9,1.1) translateY(-130%); }
-    50%  { transform: scale(1,1)    translateY(-100%); }
-    100% { transform: scale(1,1)    translateY(-100%); }
+//les animations d'opacité + translate
+.toAnimate.fadeFromLeft.active{
+    animation: 1s fadeFromLeft ease 1 forwards;
 }
 
-// .bgAnime{
-//     background-size: 200% 400%;
-//     animation: move 3s linear infinite alternate;
-// }
-
-@keyframes move {
-    0%{background-position:0% 0%}
-    100%{background-position:0% 100%}
+.toAnimate.fadeFromRight.active{
+    animation: 1s fadeFromRight ease 1 forwards;
 }
 
-@keyframes fadeIn {
-    0%{opacity: 0}
-    100%{opacity: 1}
+.toAnimate.fadeFromBottom.active{
+    animation: 1s fadeFromBottom ease 1 forwards, move 8s linear infinite alternate;;
 }
 
-@keyframes fadeFromBottom{
-    0%{ transform: translateX(-100%);}
-    100%{transform: translate(0,0);}
+.toAnimate.fadeIn.active{
+    animation: 1s fadeIn ease 1 forwards;
 }
-
-.toAnimate.active{
-    animation: 1s fadeFromBottom ease 1 forwards;
-
-    h2{
-        animation : comein 1.5s 1 ease-in-out forwards;
-    }
-}
-
-@keyframes rotate{
-    0%{background: linear-gradient(0deg, #5F5FF3 -2.98%, #B67DFF 68.14%, #FF83CD 104.54%);}
-    100%{background: linear-gradient(360deg, #5F5FF3 -2.98%, #B67DFF 68.14%, #FF83CD 104.54%);}
+// spécifique pour section contact pour rajouter l'animation lié à la background color
+.toAnimate.fadeInContact.active{
+    animation: 1s fadeIn ease 1 forwards, move 8s linear infinite alternate;;
 }
