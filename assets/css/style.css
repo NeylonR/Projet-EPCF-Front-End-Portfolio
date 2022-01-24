@@ -1053,14 +1053,20 @@ footer #rgpd a:hover {
 
   #sectionAvis article .arrowPrev, #sectionAvis article .arrowNext {
     top: 10em;
-    background-color: #ED872D;
+    background-color: #ffc040;
+    width: 15px;
+  }
+  #sectionAvis article .arrowPrev i, #sectionAvis article .arrowNext i {
+    width: 15px;
+    height: 15px;
+    font-size: 30px;
   }
   #sectionAvis article .arrowPrev h3, #sectionAvis article .arrowNext h3 {
     position: absolute;
     width: 160px;
     opacity: 0;
     visibility: hidden;
-    font-size: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
+    font-size: 19px;
     transition: all 0.3s ease-in-out;
   }
   #sectionAvis article .arrowPrev {

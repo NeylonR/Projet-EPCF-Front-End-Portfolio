@@ -82,14 +82,21 @@
         article{
             .arrowPrev, .arrowNext{
                 top: 10em;
-                background-color: $thirdColor;
+                background-color: $fourthColor;
+                width: 15px;
+                //icone de fleche de fontawesome
+                i{
+                    width: 15px;
+                    height: 15px;
+                    font-size: 30px;
+            }
 
                 h3{
                     position: absolute;
                     width: 160px;
                     opacity: 0;
                     visibility: hidden;
-                    font-size: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
+                    font-size: 19px;
                     @include transi;
                 }
             }
