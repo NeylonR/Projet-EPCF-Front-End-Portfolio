@@ -4,6 +4,7 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     height: 60vh;
+    min-height: 350px;
     padding: 1em;
     @include flex(space-between, row, flex-start);
 
@@ -22,7 +23,7 @@ header{
             border-radius: 50%;
             object-fit: cover;
             width: 70vw;
-            max-width: 350px;
+            max-width: 300px;
             z-index: 1;
         }
 

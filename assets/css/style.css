@@ -181,12 +181,12 @@ html, body {
 
 body {
   font-family: Lato;
-  font-size: clamp(1.125rem, 0.6vw + 1rem, 1.375rem);
+  font-size: clamp(1.125rem, 0.3vw + 1rem, 1.188rem);
 }
 
 h1, h2, h3, h4 {
   font-family: Archivo;
-  font-size: clamp(1.375rem, 0.8vw + 1rem, 1.75rem);
+  font-size: clamp(1.25rem, 0.5vw + 1rem, 1.375rem);
 }
 
 h1 {
@@ -270,6 +270,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   height: 60vh;
+  min-height: 350px;
   padding: 1em;
   display: flex;
   justify-content: space-between;
@@ -295,7 +296,7 @@ header .imgContainer img {
   border-radius: 50%;
   object-fit: cover;
   width: 70vw;
-  max-width: 350px;
+  max-width: 300px;
   z-index: 1;
 }
 header .imgContainer .glitchLayer {
@@ -458,6 +459,7 @@ nav #navbar a {
   flex-wrap: wrap;
   gap: 3em;
   overflow: hidden;
+  padding-bottom: 1em;
 }
 #sectionSkills article {
   display: flex;
@@ -468,7 +470,7 @@ nav #navbar a {
   background-color: #fafafa;
   width: 80%;
   border-radius: 25px;
-  box-shadow: 1px 1px 5px 0 #62067719;
+  box-shadow: 1px 1px 5px 0 #6206776b;
   padding: 2em 1em;
   transform: translateX(-100%);
   opacity: 0;
@@ -484,7 +486,7 @@ nav #navbar a {
 }
 #sectionSkills article div img {
   width: 18%;
-  max-width: 60px;
+  max-width: 55px;
 }
 #sectionSkills article img {
   width: 35%;
@@ -507,7 +509,7 @@ nav #navbar a {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 5em 0;
+  padding: 5em 0 3.5em;
   gap: 1em;
 }
 #sectionGalerie .textContainer {
@@ -522,7 +524,7 @@ nav #navbar a {
 }
 #sectionGalerie p {
   text-align: center;
-  padding: 0 0.5em;
+  padding: 0.3em 0.5em 0;
 }
 #sectionGalerie .imgContainer {
   position: relative;
@@ -532,7 +534,7 @@ nav #navbar a {
   overflow: hidden;
   border-radius: 25px;
   margin-bottom: 3em;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 2px 2px 2px #62067798;
   transform: translateX(-100%);
   opacity: 0;
 }
@@ -761,7 +763,7 @@ nav #navbar a {
   margin: 1em 0;
 }
 #sectionContact .socials a {
-  font-size: clamp(2.188rem, 3vw + 1rem, 3.125rem);
+  font-size: clamp(2.188rem, 2vw + 1rem, 2.5rem);
 }
 #sectionContact form {
   display: flex;
@@ -776,7 +778,7 @@ nav #navbar a {
   width: 80%;
   background-color: #fafafa;
   border-radius: 25px;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.678);
   z-index: 6;
   opacity: 0;
 }
@@ -791,7 +793,7 @@ nav #navbar a {
   border-bottom: 2px #62067733 solid;
   box-sizing: border-box;
   font-family: Lato;
-  font-size: clamp(1.125rem, 0.6vw + 1rem, 1.375rem);
+  font-size: clamp(1.125rem, 0.3vw + 1rem, 1.188rem);
 }
 #sectionContact form input:focus, #sectionContact form input:focus, #sectionContact form textarea:focus, #sectionContact form textarea:focus {
   outline: none;
@@ -815,7 +817,7 @@ nav #navbar a {
   left: 5%;
   transform: translateY(-50%);
   font-family: Lato;
-  font-size: clamp(1.125rem, 0.6vw + 1rem, 1.375rem);
+  font-size: clamp(1.125rem, 0.3vw + 1rem, 1.188rem);
   transition: all 0.3s ease-in-out;
 }
 #sectionContact form input:focus + label:before, #sectionContact form input:valid + label:before, #sectionContact form textarea:focus + label:before, #sectionContact form textarea:valid + label:before {
@@ -830,7 +832,7 @@ nav #navbar a {
   border-radius: 25px;
   padding: 0.5em 1em;
   display: inline-block;
-  box-shadow: 1px 1px 1px black;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.795);
   font-size: clamp(1.125rem, 0.3vw + 1rem, 1.188rem);
   font-family: Archivo;
   transition: all 0.3s ease-in-out;
@@ -857,7 +859,7 @@ footer {
 footer p, footer a {
   color: #daddd8;
   transition: all 0.3s ease-in-out;
-  font-size: clamp(0.063rem, 0.8vw + 0.75rem, 1.5rem);
+  font-size: 18px;
 }
 footer #backToTopButton {
   position: absolute;
@@ -896,10 +898,9 @@ footer .socials {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
-  font-size: 40px;
 }
 footer .socials a {
-  font-size: inherit;
+  font-size: clamp(2.188rem, 2vw + 1rem, 2.5rem);
 }
 footer #rgpd {
   width: 100%;
@@ -977,6 +978,11 @@ footer #rgpd a:hover {
   nav #navbar a:hover {
     background: #58224667;
     border-bottom: 5px #582246 solid;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header {
+    min-height: 420px;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -1075,7 +1081,7 @@ footer #rgpd a:hover {
     transform: translateX(0%);
   }
   #sectionAvis article .arrowPrev:hover, #sectionAvis article .arrowNext:hover {
-    width: 160px;
+    width: 170px;
   }
   #sectionAvis article .arrowPrev:hover h3, #sectionAvis article .arrowNext:hover h3 {
     opacity: 1;
@@ -1085,6 +1091,10 @@ footer #rgpd a:hover {
   #sectionAvis article .arrowNext:hover h3 {
     transform: translateX(-15%);
   }
+
+  #sectionContact form {
+    max-width: 700px;
+  }
 }
 @media screen and (min-width: 900px) {
   #sectionSkills {
@@ -1093,12 +1103,12 @@ footer #rgpd a:hover {
     align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.3em;
+    gap: 0.5em;
   }
   #sectionSkills article {
-    width: 27.5%;
+    width: 22%;
     height: 60vw;
-    max-height: 580px;
+    max-height: 480px;
     max-width: 350px;
     padding: 2em 1em 0;
   }
@@ -1129,7 +1139,7 @@ footer #rgpd a:hover {
   }
 
   #sectionContact form {
-    max-width: 1050px;
+    max-width: 700px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1150,7 +1160,7 @@ footer #rgpd a:hover {
 }
 @media screen and (min-width: 1360px) {
   #sectionSkills article {
-    max-height: 630px;
+    max-height: 500px;
   }
   #sectionSkills article h1:after {
     visibility: visible;

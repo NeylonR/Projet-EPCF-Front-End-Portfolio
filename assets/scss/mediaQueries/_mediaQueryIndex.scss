@@ -112,7 +112,7 @@
             }
 
             .arrowPrev:hover, .arrowNext:hover{
-                width: 160px;
+                width: 170px;
                 h3{
                     opacity: 1;
                     visibility: visible;
@@ -127,17 +127,23 @@
             }
         }
     }
+
+    #sectionContact{
+        form{
+            max-width: 700px;
+        }
+    }
 }
 
 @media screen and(min-width: 900px){
     #sectionSkills{
         @include flex(center, row, flex-start);
-        gap: .3em;
+        gap: .5em;
     
         article{
-            width: 27.5%;
+            width: 22%;
             height: 60vw;
-            max-height: 580px;
+            max-height: 480px;
             max-width: 350px;
             padding: 2em 1em 0;
 
@@ -188,7 +194,7 @@
 
     #sectionContact{
         form{
-            max-width: 1050px;
+            max-width: 700px;
         }
     }
 }
@@ -224,7 +230,7 @@
 @media screen and(min-width: 1360px){
     #sectionSkills{
         article{
-            max-height: 630px;
+            max-height: 500px;
             h1{
                 &:after{
                     visibility: visible;

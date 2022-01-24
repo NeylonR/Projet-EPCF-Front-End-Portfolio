@@ -9,7 +9,7 @@ footer {
     p, a{
         color: $lightColor;
         @include transi;
-        font-size: clamp(0.063rem, 0.8vw + 0.75rem, 1.5rem);
+        font-size: 18px;
     }
 
     #backToTopButton{
@@ -50,9 +50,8 @@ footer {
     .socials{
         @include flex;
         gap: 1em;
-        font-size: 40px;
         a{
-            font-size: inherit;
+            font-size: clamp(2.188rem, 2vw + 1rem, 2.5rem);
         }
     }
 
